@@ -9,8 +9,8 @@ function importExtraPolyfills() {
 }
 
 export function loadPolyfills() {
-  // Safari does not have requestIdleCallback.
-  // This avoids shipping them all the polyfills.
+  // Safari only gained requestIdleCallback in version 18.
+  // This avoids shipping all the polyfills to browsers that don't need them.
   const needsExtraPolyfills = !window.requestIdleCallback;
 
   return Promise.all([
