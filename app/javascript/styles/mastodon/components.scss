@@ -2,11 +2,6 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
-.app-body {
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-}
-
 .animated-number {
   display: inline-flex;
   flex-direction: column;
@@ -3901,7 +3896,6 @@ a.account__display-name {
   overflow-y: scroll;
   overflow-x: hidden;
   flex: 1 1 auto;
-  -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
 
   &.optionally-scrollable {
@@ -10808,8 +10802,8 @@ noscript {
       white-space: pre-line;
       color: var(--color-text-primary);
       overflow: hidden;
-      line-clamp: 3; // Not yet supported in browers
-      display: -webkit-box; // The next 3 properties are needed
+      line-clamp: 3; // Standard property, not yet supported everywhere
+      display: -webkit-box; // The next 3 properties are the legacy fallback
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
     }
